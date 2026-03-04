@@ -9,19 +9,19 @@ const Contribute = () => {
         {
             name: 'Jaysinh Dabhi',
             role: 'Sr. Front-End Developer & UI/UX Designer',
-            github: 'https://github.com/JaysinhDabhi',
-            avatar: 'https://github.com/JaysinhDabhi.png',
+            github: 'https://github.com/jaysinhdabhi',
+            avatar: 'https://github.com/jaysinhdabhi.png',
         },
         {
             name: 'Open Source Community',
             role: 'Various Contributions',
-            github: '#',
+            github: 'https://github.com/PriyanshuPatel-24/NPI-Finder',
             avatar: 'https://ui-avatars.com/api/?name=Open+Source&background=10b981&color=fff',
         }
     ];
 
     return (
-        <section className="pt-20 sm:pt-24 pb-12 sm:pb-16 bg-white dark:bg-gray-900 transition-colors">
+        <section className="pt-20 sm:pt-24 pb-12 sm:pb-16 bg-gradient-to-br from-primary-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 transition-colors">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Header Section */}
@@ -35,7 +35,7 @@ const Contribute = () => {
                 </div>
 
                 {/* How to Contribute */}
-                <div className="bg-primary-50 dark:bg-primary-900/20 rounded-2xl p-8 sm:p-10 border border-primary-100 dark:border-primary-800/50 mb-16 shadow-sm">
+                <div className="backdrop-blur-sm bg-white/60 dark:bg-gray-800/50 rounded-2xl p-8 sm:p-10 border border-white/80 dark:border-gray-700/60 mb-16 shadow-lg ring-1 ring-primary-100/50 dark:ring-primary-900/30">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
                         <svg className="h-8 w-8 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -77,7 +77,7 @@ const Contribute = () => {
                         </ul>
                     </div>
                     <div className="mt-10 text-center md:text-left">
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-lg text-white bg-gray-900 hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 transition-colors shadow-sm">
+                        <a href="https://github.com/PriyanshuPatel-24/NPI-Finder" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-lg text-white bg-gray-900 hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 transition-colors shadow-sm">
                             <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
                             </svg>
@@ -95,15 +95,29 @@ const Contribute = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
                         {contributors.map((contributor, index) => (
-                            <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow border border-gray-100 dark:border-gray-700 hover:-translate-y-1 transition-transform duration-300">
-                                <img
-                                    src={contributor.avatar}
-                                    alt={contributor.name}
-                                    className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-primary-50 dark:border-gray-700 object-cover"
-                                />
-                                <h4 className="text-xl font-bold text-gray-900 dark:text-white">{contributor.name}</h4>
+                            <a
+                                key={index}
+                                href={contributor.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group backdrop-blur-sm bg-white/70 dark:bg-gray-800/50 rounded-xl p-6 text-center shadow-lg border border-white/80 dark:border-gray-700/60 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 ring-1 ring-gray-200/50 dark:ring-gray-700/30 cursor-pointer"
+                            >
+                                <div className="relative inline-block mb-4">
+                                    <img
+                                        src={contributor.avatar}
+                                        alt={contributor.name}
+                                        className="w-24 h-24 rounded-full mx-auto border-4 border-primary-100 dark:border-primary-900/50 object-cover group-hover:border-primary-400 dark:group-hover:border-primary-500 transition-colors"
+                                    />
+                                    <span className="absolute bottom-0 right-0 bg-gray-900 dark:bg-white rounded-full p-1 shadow">
+                                        <svg className="w-4 h-4 text-white dark:text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                                            <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <h4 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{contributor.name}</h4>
                                 <p className="text-primary-600 dark:text-primary-400 font-medium text-sm mt-1">{contributor.role}</p>
-                            </div>
+                                <p className="text-xs text-gray-400 dark:text-gray-500 mt-2">View on GitHub →</p>
+                            </a>
                         ))}
                     </div>
                 </div>

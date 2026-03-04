@@ -25,7 +25,7 @@ const ContactUs = () => {
   };
 
   return (
-    <section className="pt-20 sm:pt-24 pb-12 sm:pb-16 bg-gradient-to-br from-primary-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors">
+    <section className="pt-20 sm:pt-24 pb-12 sm:pb-16 bg-gradient-to-br from-primary-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 transition-colors">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -36,7 +36,7 @@ const ContactUs = () => {
           </p>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-5 sm:p-6 md:p-8 border border-gray-200 dark:border-gray-700">
+        <div className="backdrop-blur-sm bg-white/70 dark:bg-gray-800/50 rounded-2xl shadow-xl p-5 sm:p-6 md:p-8 border border-white/80 dark:border-gray-700/60 ring-1 ring-gray-200/50 dark:ring-gray-700/30">
           {submitted ? (
             <div className="text-center py-8">
               <svg className="mx-auto h-14 w-14 sm:h-16 sm:w-16 text-green-500 dark:text-green-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -102,9 +102,7 @@ const ContactUs = () => {
                   Send Message
                 </button>
               </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-                Note: This is a UI-only form. In production, this would connect to a backend service.
-              </p>
+
             </form>
           )}
         </div>

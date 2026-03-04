@@ -1,169 +1,201 @@
-# NPI Finder
+# 🏥 NPI Finder
 
-A professional React.js web application for finding healthcare provider NPI (National Provider Identifier) numbers. Designed for medical coders and healthcare administrators to streamline their workflow.
+<div align="center">
 
-## Project Overview
+![NPI Finder](https://img.shields.io/badge/NPI-Finder-blue?style=for-the-badge&logo=react)
+![React](https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react)
+![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?style=for-the-badge&logo=vite)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel)
 
-NPI Finder is a React.js web app that lets medical coders search for healthcare provider NPI numbers by name, credential, and state. It uses the **official CMS NPI Registry (NPPES) API** for live data.
+**A fast, modern web app for searching National Provider Identifier (NPI) numbers of US healthcare providers.**
 
-## Features
+[🚀 Live Demo](https://npi-finder.vercel.app) · [🐛 Report Bug](https://github.com/PriyanshuPatel-24/NPI-Finder/issues) · [✨ Request Feature](https://github.com/PriyanshuPatel-24/NPI-Finder/issues)
 
-- **Real NPI search**: Uses the [NPPES API](https://npiregistry.cms.hhs.gov/api-page) (no mock data)
-- **Search by**: Full name, credential (MD, DO, NP, PA, etc.), and state with type-ahead suggestions
-- **Results**: Single or multiple matches with match percentage, NPI number, and copy-to-clipboard
-- **Responsive layout** and smooth scroll navigation
-
-## Technology Stack
-
-- **React.js 18**: Modern React with hooks
-- **Vite**: Fast build tool and development server
-- **Tailwind CSS**: Utility-first CSS framework
-- **JavaScript (ES6+)**: Modern JavaScript features
-
-## Project Structure
-
-```
-npi-finder/
-├── src/
-│   ├── components/
-│   │   ├── Navbar.jsx          # Navigation bar component
-│   │   ├── HomeSection.jsx     # Main search form and hero section
-│   │   ├── SearchResults.jsx   # Results display component
-│   │   ├── HowItWorks.jsx      # How it works section
-│   │   ├── AboutUs.jsx         # About us section
-│   │   ├── Support.jsx          # Support section
-│   │   ├── ContactUs.jsx       # Contact form section
-│   │   └── Footer.jsx           # Footer component
-│   ├── api/
-│   │   └── npiRegistry.js       # NPPES API client
-│   ├── data/
-│   │   └── stateCodes.js        # US state name/code mapping
-│   ├── App.jsx                  # Main app component
-│   ├── main.jsx                 # Application entry point
-│   └── index.css                # Global styles with Tailwind
-├── index.html                   # HTML template
-├── package.json                 # Dependencies and scripts
-├── vite.config.js              # Vite configuration
-├── tailwind.config.js           # Tailwind CSS configuration
-└── README.md                    # This file
-```
-
-## Installation & Setup
-
-### Prerequisites
-
-- Node.js (v16 or higher recommended)
-- npm or yarn package manager
-
-### Steps
-
-1. **Navigate to the project directory:**
-   ```bash
-   cd npi-finder
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser:**
-   The application will be available at `http://localhost:5173` (or the port shown in your terminal)
-
-## Usage
-
-1. **Search for NPI:**
-   - Enter the provider's **full name** (required)
-   - Type **credential** (e.g. MD, NP, PA) and pick from suggestions (required)
-   - Type **state** and pick from suggestions (required)
-   - Optionally enter address to narrow results
-   - Click **Find NPI**
-
-2. **View Results:**
-   - **Single match**: One card with NPI, match %, and copy button
-   - **Multiple matches**: Table with provider name, credential, state, NPI (with copy button), and match %
-   - Copy button copies that row’s NPI to the clipboard
-
-3. **Navigate:** Use the top nav to scroll to How It Works, About Us, Support, Contact Us.
-
-## Real API (NPPES)
-
-The app calls the **CMS NPI Registry API** (`https://npiregistry.cms.hhs.gov/api/?version=2.1`).
-
-- **Development:** Vite proxies `/npi-api` to the NPPES API to avoid CORS.
-- **Production:** The app calls the NPPES API directly. If the browser blocks the request (CORS), run the app behind a server that proxies `/npi-api` to `https://npiregistry.cms.hhs.gov/api`.
-
-**NPPES API docs:** https://npiregistry.cms.hhs.gov/api-page
-
-## Building for Production
-
-To create a production build:
-
-```bash
-npm run build
-```
-
-The built files will be in the `dist` directory. To preview the production build:
-
-```bash
-npm run preview
-```
-
-## Key Features Explained
-
-### Form Validation
-- Required fields are validated before submission
-- Real-time error messages guide users
-- Visual feedback for form errors
-
-### Copy-to-Clipboard
-- Uses the Clipboard API for reliable copying
-- Visual feedback when NPI is copied
-- Works across all modern browsers
-
-### Responsive Design
-- Mobile-first approach
-- Breakpoints for tablet and desktop
-- Touch-friendly interface elements
-
-### Smooth Scrolling
-- CSS-based smooth scroll behavior
-- JavaScript-based section navigation
-- Fixed navigation bar for easy access
-
-## College Presentation Notes
-
-### Technical Highlights
-- Modern React.js with functional components and hooks
-- Clean component architecture with separation of concerns
-- Production-ready UI/UX design
-- Scalable code structure for future enhancements
-
-### Project Purpose
-- Demonstrates understanding of frontend development
-- Shows ability to design for future backend integration
-- Highlights healthcare industry application knowledge
-- Showcases professional UI/UX design skills
-
-### Future Enhancements
-- User authentication and saved searches
-- Advanced filtering (taxonomy/specialty)
-- Export search results
-- Provider profile pages
-
-## License
-
-This project is for educational and evaluation purposes.
-
-## Author
-
-Built by Superior
+</div>
 
 ---
 
-**Note:** This app uses the official CMS NPI Registry (NPPES) API for live provider data.
+## 📋 Table of Contents
+
+- [About](#about)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Deployment](#deployment)
+- [Contributors](#contributors)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## 📖 About
+
+NPI Finder is a production-ready web application that helps **medical coders**, **healthcare administrators**, and **billing professionals** quickly look up National Provider Identifier (NPI) numbers using the official CMS NPPES Registry API.
+
+Simply enter a provider's name, credential (MD, NP, PA, etc.), and state — and get instant, accurate NPI results with a copy-to-clipboard feature.
+
+---
+
+## ✨ Features
+
+- 🔍 **Real-time NPI Search** — Powered by the official [NPPES NPI Registry API](https://npiregistry.cms.hhs.gov/api-page)
+- 🎯 **Match Accuracy Scoring** — Providers are ranked by relevance to your search query
+- 📋 **One-click Copy** — Copy any NPI number to clipboard instantly
+- 🌙 **Dark Mode** — Full dark/light mode support with glassmorphism UI
+- ⚡ **Bulk Finder** — Upload or paste multiple provider names for batch NPI lookups (authenticated users)
+- 📱 **Fully Responsive** — Works seamlessly on mobile, tablet, and desktop
+- 🔐 **Google Authentication** — Sign in with Google to access advanced features (Firebase)
+- 🌐 **CORS-free on Vercel** — Uses a serverless proxy function to call the NPPES API from the server
+
+---
+
+## 🛠 Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React 18, React Router v6 |
+| Styling | Tailwind CSS 3 with glassmorphism |
+| Build Tool | Vite 5 |
+| Auth | Firebase (Google Sign-in) |
+| API | CMS NPPES NPI Registry |
+| Hosting | Vercel (with serverless proxy) |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js **18+**
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/PriyanshuPatel-24/NPI-Finder.git
+cd NPI-Finder
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+The app will be available at **http://localhost:5173**
+
+> ⚙️ In development, Vite proxies `/api/npi-proxy` → NPPES API to avoid CORS.  
+> In production on Vercel, `api/npi-proxy.js` handles this as a serverless function.
+
+### Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## 📁 Project Structure
+
+```
+npi-finder/
+├── api/
+│   └── npi-proxy.js          # Vercel serverless proxy for NPPES API
+├── src/
+│   ├── api/
+│   │   └── npiRegistry.js    # NPI search logic & NPPES API client
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── HomeSection.jsx   # Main search form
+│   │   ├── SearchResults.jsx # Results display (single & multiple)
+│   │   ├── AboutUs.jsx
+│   │   ├── Contribute.jsx
+│   │   ├── ContactUs.jsx
+│   │   ├── Footer.jsx
+│   │   └── HowItWorks.jsx
+│   ├── context/
+│   │   └── ThemeContext.jsx  # Dark/light mode context
+│   ├── data/
+│   │   └── stateCodes.js     # US state code mappings
+│   └── pages/
+│       ├── LandingPage.jsx
+│       ├── BulkFinderPage.jsx
+│       ├── ContributePage.jsx
+│       └── ContactPage.jsx
+├── index.html
+├── vite.config.js
+├── tailwind.config.js
+└── package.json
+```
+
+---
+
+## ☁️ Deployment
+
+This project is optimized for **Vercel** deployment.
+
+### Deploy to Vercel
+
+1. Fork this repository
+2. Import it in [Vercel Dashboard](https://vercel.com/new)
+3. Leave all settings as default — Vercel auto-detects Vite
+4. Click **Deploy**
+
+The `api/npi-proxy.js` file is automatically detected as a Vercel serverless function.
+
+> **Why the proxy?** The browser cannot call `npiregistry.cms.hhs.gov` directly due to CORS restrictions. The serverless function fetches on the server side and returns results to the browser.
+
+---
+
+## 👥 Contributors
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/PriyanshuPatel-24">
+        <img src="https://github.com/PriyanshuPatel-24.png" width="80px;" alt="Priyanshu Patel"/><br />
+        <sub><b>Priyanshu Patel</b></sub>
+      </a><br />
+      <sub>Project Creator & Lead Developer</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/jaysinhdabhi">
+        <img src="https://github.com/jaysinhdabhi.png" width="80px;" alt="Jaysinh Dabhi"/><br />
+        <sub><b>Jaysinh Dabhi</b></sub>
+      </a><br />
+      <sub>Sr. Front-End Developer & UI/UX</sub>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 🤝 Contributing
+
+Contributions are what make open source great! Here's how you can help:
+
+1. **Fork** the repository
+2. **Create** a feature branch: `git checkout -b feature/amazing-feature`
+3. **Commit** your changes: `git commit -m 'feat: add amazing feature'`
+4. **Push** to the branch: `git push origin feature/amazing-feature`
+5. **Open** a Pull Request
+
+You can also open an [issue](https://github.com/PriyanshuPatel-24/NPI-Finder/issues) for bug reports or feature requests.
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+<div align="center">
+  Made with ❤️ for the healthcare community
+  <br />
+  <a href="https://github.com/PriyanshuPatel-24/NPI-Finder">⭐ Star this project if you found it helpful!</a>
+</div>

@@ -14,7 +14,7 @@ const SearchResults = ({ results }) => {
 
   if (results.length === 0) {
     return (
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 sm:p-8 text-center border border-gray-200 dark:border-gray-700">
+      <div className="backdrop-blur-sm bg-white/70 dark:bg-gray-800/50 rounded-2xl shadow-lg p-6 sm:p-8 text-center border border-white/80 dark:border-gray-700/60 ring-1 ring-gray-200/50 dark:ring-gray-700/30">
         <svg className="mx-auto h-12 w-12 text-gray-400 dark:text-gray-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
@@ -30,37 +30,37 @@ const SearchResults = ({ results }) => {
   if (results.length === 1) {
     const provider = results[0];
     return (
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 md:p-8 border border-gray-200 dark:border-gray-700">
+      <div className="backdrop-blur-sm bg-white/70 dark:bg-gray-800/50 rounded-2xl shadow-lg p-6 md:p-8 border border-white/80 dark:border-gray-700/60 ring-1 ring-gray-200/50 dark:ring-gray-700/30">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Search Result</h2>
           <span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-semibold w-fit">
             {provider.matchAccuracy}% Match
           </span>
         </div>
-        
+
         <div className="space-y-4">
           <div className="border-b border-gray-200 dark:border-gray-600 pb-4">
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Provider Name</p>
             <p className="text-lg font-semibold text-gray-900 dark:text-white">{provider.name}</p>
           </div>
-          
+
           <div className="border-b border-gray-200 dark:border-gray-600 pb-4">
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Credential</p>
             <p className="text-lg font-medium text-gray-900 dark:text-white">{provider.credential}</p>
           </div>
-          
+
           <div className="border-b border-gray-200 dark:border-gray-600 pb-4">
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">State</p>
             <p className="text-lg font-medium text-gray-900 dark:text-white">{provider.state}</p>
           </div>
-          
+
           {provider.address && (
             <div className="border-b border-gray-200 dark:border-gray-600 pb-4">
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Address</p>
               <p className="text-lg font-medium text-gray-900 dark:text-white">{provider.address}</p>
             </div>
           )}
-          
+
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-4">
             <div>
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">NPI Number</p>
@@ -95,14 +95,14 @@ const SearchResults = ({ results }) => {
 
   // Multiple matches display
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-gray-200 dark:border-gray-700 overflow-hidden">
+    <div className="backdrop-blur-sm bg-white/70 dark:bg-gray-800/50 rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 border border-white/80 dark:border-gray-700/60 ring-1 ring-gray-200/50 dark:ring-gray-700/30 overflow-hidden">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Search Results</h2>
         <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold w-fit">
           {results.length} Matches Found
         </span>
       </div>
-      
+
       <div className="overflow-x-auto -mx-2 sm:mx-0">
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
           <thead className="bg-gray-50 dark:bg-gray-700/50">
@@ -157,11 +157,10 @@ const SearchResults = ({ results }) => {
                   </div>
                 </td>
                 <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
-                  <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                    provider.matchAccuracy >= 95 ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300' :
-                    provider.matchAccuracy >= 85 ? 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300' :
-                    'bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300'
-                  }`}>
+                  <span className={`px-2 py-1 text-xs font-semibold rounded-full ${provider.matchAccuracy >= 95 ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300' :
+                      provider.matchAccuracy >= 85 ? 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300' :
+                        'bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300'
+                    }`}>
                     {provider.matchAccuracy}%
                   </span>
                 </td>

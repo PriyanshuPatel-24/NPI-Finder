@@ -97,7 +97,7 @@ const HomeSection = () => {
   };
 
   return (
-    <section id="home" className="pt-20 sm:pt-24 pb-12 sm:pb-16 bg-gradient-to-br from-primary-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors">
+    <section id="home" className="pt-20 sm:pt-24 pb-12 sm:pb-16 bg-gradient-to-br from-primary-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 transition-colors">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
@@ -108,7 +108,7 @@ const HomeSection = () => {
           </p>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-5 sm:p-6 md:p-8 border border-gray-200 dark:border-gray-700 transition-colors">
+        <div className="backdrop-blur-sm bg-white/70 dark:bg-gray-800/50 rounded-2xl shadow-xl p-5 sm:p-6 md:p-8 border border-white/80 dark:border-gray-700/60 ring-1 ring-gray-200/50 dark:ring-gray-700/30 transition-all">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
@@ -121,9 +121,8 @@ const HomeSection = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 ${
-                    errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-                  }`}
+                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 ${errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                    }`}
                   placeholder="e.g., Jennifer Marie Smith"
                 />
                 {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
@@ -144,16 +143,15 @@ const HomeSection = () => {
                     setCredSuggestions(
                       formData.credential.trim()
                         ? CREDENTIALS.filter(
-                            (c) =>
-                              c.startsWith(formData.credential.trim().toUpperCase()) ||
-                              c.includes(formData.credential.trim())
-                          )
+                          (c) =>
+                            c.startsWith(formData.credential.trim().toUpperCase()) ||
+                            c.includes(formData.credential.trim())
+                        )
                         : CREDENTIALS
                     );
                   }}
-                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 ${
-                    errors.credential ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-                  }`}
+                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 ${errors.credential ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                    }`}
                   placeholder="e.g., MD, NP, PA"
                   autoComplete="off"
                 />
@@ -190,9 +188,8 @@ const HomeSection = () => {
                     const q = formData.state.trim().toLowerCase();
                     setStateSuggestions(q ? US_STATES.filter((s) => s.toLowerCase().includes(q)) : US_STATES);
                   }}
-                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 ${
-                    errors.state ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-                  }`}
+                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 ${errors.state ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                    }`}
                   placeholder="e.g., California, Texas"
                   autoComplete="off"
                 />

@@ -1,16 +1,15 @@
 /**
  * NPI Registry (NPPES) API – real provider search
  * Official API: https://npiregistry.cms.hhs.gov/api-page
- * Uses Vite proxy in dev to avoid CORS (/npi-api -> npiregistry.cms.hhs.gov/api)
+ * Uses /api/npi-proxy to avoid CORS:
+ *   - Dev: Vite proxy forwards /api/npi-proxy → npiregistry.cms.hhs.gov/api
+ *   - Production (Vercel): serverless function at api/npi-proxy.js
  */
 
 import { getStateCode, getStateName } from '../data/stateCodes';
 
-// Use proxy in dev (Vite proxy /npi-api -> npiregistry.cms.hhs.gov/api) to avoid CORS
-const API_BASE =
-  typeof import.meta !== 'undefined' && import.meta.env?.DEV
-    ? '/npi-api'
-    : 'https://npiregistry.cms.hhs.gov/api';
+// Always use the /api/npi-proxy endpoint (works in both dev and production)
+const API_BASE = '/api/npi-proxy';
 
 /**
  * Parse full name into first, middle, last for NPPES API
